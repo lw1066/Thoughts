@@ -85,6 +85,7 @@ a:hover {
 .articleImg {
   grid-area: img;
   max-width: 95%;
+  padding-top: 0.5rem;
 }
 .info {
   grid-area: "info";
@@ -99,7 +100,7 @@ a:hover {
 .likeIt {
   grid-area: actions;
   text-align: center;
-  margin: 1rem;
+  margin: 0;
   font-size: 3.5vw;
 }
 
@@ -176,9 +177,6 @@ button:hover {
   background-color: cornflowerblue;
 }
 
-#commentsGrid {
-}
-
 #commentsButton {
   margin: 1rem;
   padding: 0.25rem;
@@ -200,6 +198,11 @@ button:hover {
 #commentActions {
   display: flex;
   justify-content: space-around;
+}
+
+.errorMessage {
+  font-size: 8px;
+  height: 15px;
 }
 
 @media screen and (min-width: 764px) {

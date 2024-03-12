@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link, useParams, useLoaderData, Outlet } from "react-router-dom";
+import { Link, useParams, useLoaderData } from "react-router-dom";
 import { getComments } from "../utils/api-requests";
+import { VoteButtons } from "../components/VoteButtons";
 
 export default function FullArticle() {
   const [comments, setComments] = useState(null);
@@ -53,14 +54,7 @@ export default function FullArticle() {
       <Link to="/articles">
         <button>Back to articles</button>
       </Link>
-      <p>UpVotes: {votes}</p>
-      <div id="voting">
-        <p>Like it?</p>
-        <div id="buttonGroup">
-          <button>+</button>
-          <button>-</button>
-        </div>
-      </div>
+      <VoteButtons votes={votes} article_id={article_id} />
       <p>Comments: {comment_count}</p>
       <button id="commentsButton" onClick={() => commentHandler(article_id)}>
         {showComments ? "Hide comments" : "Show Comments"}
@@ -74,8 +68,8 @@ export default function FullArticle() {
               <p>Comment by : {comment.author}</p>
               <div id="commentActions">
                 <p id="votes">{comment.votes} Votes</p>
-                <button id="comButUp">+</button>
-                <button id="comButDown">-</button>
+                <button>+</button>
+                <button>-</button>
               </div>
             </li>
           ))}
