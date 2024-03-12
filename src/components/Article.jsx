@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { patchVote } from "../utils/api-requests";
+import { useEffect, useState } from "react";
+import { VoteButtons } from "./VoteButtons";
 
 export function Article({
   article_id,
@@ -17,18 +20,13 @@ export function Article({
         <Link className="title" to={linkPointer}>
           <h2>{title}</h2>
         </Link>
-        <p className="topic">topic: {topic}</p>
       </div>
       <div className="info">
+        <p className="topic">topic: {topic}</p>
         <p className="comments">comments: {comment_count}</p>
-        <p className="votes">Upvotes: {votes}</p>
       </div>
-      <div className="likeIt">
-        <p>Like it?</p>
 
-        <button>+</button>
-        <button>-</button>
-      </div>
+      <VoteButtons votes={votes} article_id={article_id} />
     </li>
   );
 }

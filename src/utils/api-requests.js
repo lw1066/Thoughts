@@ -37,3 +37,16 @@ export async function getComments(id) {
     throw err;
   }
 }
+
+export async function patchVote(vote, article_id) {
+  const requestUrl = url + `/api/articles/${article_id}`;
+  const body = { inc_votes: vote };
+
+  try {
+    const updatedArticle = await axios.patch(requestUrl, body);
+    return updatedArticle;
+  } catch (err) {
+    console.error("error loading articles", err);
+    throw err;
+  }
+}
