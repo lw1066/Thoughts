@@ -4,9 +4,10 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const mockUser = {
-    username: "rogersop",
-    name: "paul",
-    avatar_url: "https://avatars2.githubusercontent.com/u/24394918?s=400&v=4",
+    username: "tickle122",
+    name: "Tom Tickle",
+    avatar_url:
+      "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953",
   };
   const [user, setUser] = useState(mockUser);
 
