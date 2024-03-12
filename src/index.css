@@ -205,8 +205,38 @@ button:hover {
   height: 15px;
 }
 
+#commentLabel {
+  font-size: 12px;
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media screen and (min-width: 764px) {
   #comment p {
+    font-size: 2rvw;
+  }
+
+  #commentsButton {
     font-size: 2vw;
+  }
+
+  .fullArticle p {
+    font-size: 2vw;
+  }
+
+  .fullArticle button {
+    font-size: 2vw;
+  }
+
+  .fullArticle h1 {
+    font-size: 4vw;
+  }
+
+  #author {
+    font-size: 1.5vw;
   }
 }

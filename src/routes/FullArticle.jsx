@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useParams, useLoaderData } from "react-router-dom";
 import { getComments } from "../utils/api-requests";
 import { VoteButtons } from "../components/VoteButtons";
+import { Comments } from "../components/Comments";
+import { UserContext } from "../contexts/UserContext";
+import { AddComment } from "../components/AddComment";
 
 export default function FullArticle() {
+  const { user } = useContext(UserContext);
   const [comments, setComments] = useState(null);
   const [showComments, setShowComments] = useState(false);
+  const [showAddCommentModal, setShowAddCommentModal] = useState(false);
   const { article_id } = useParams();
   const article = useLoaderData();
 
@@ -38,7 +43,12 @@ export default function FullArticle() {
       }
     } else {
       setShowComments((curr) => !curr);
+      if (showAddCommentModal) toggleAddCommentModal();
     }
+  };
+
+  const toggleAddCommentModal = () => {
+    setShowAddCommentModal(!showAddCommentModal);
   };
 
   return (
@@ -59,22 +69,20 @@ export default function FullArticle() {
       <button id="commentsButton" onClick={() => commentHandler(article_id)}>
         {showComments ? "Hide comments" : "Show Comments"}
       </button>
-
-      {showComments && (
-        <ul id="commentsGrid">
-          {comments.map((comment, index) => (
-            <li key={index} id="comment">
-              <p>{comment.body}</p>
-              <p>Comment by : {comment.author}</p>
-              <div id="commentActions">
-                <p id="votes">{comment.votes} Votes</p>
-                <button>+</button>
-                <button>-</button>
-              </div>
-            </li>
-          ))}
-        </ul>
+      {showAddCommentModal && (
+        <AddComment
+          toggleAddCommentModal={toggleAddCommentModal}
+          article_id={article_id}
+          username={user.username}
+          setComments={setComments}
+        />
       )}
+      {showComments && user && (
+        <button id="commentsButton" onClick={toggleAddCommentModal}>
+          {showAddCommentModal ? "cancel" : "Add comment"}
+        </button>
+      )}
+      {showComments && <Comments comments={comments} />}
     </div>
   );
 }

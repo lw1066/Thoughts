@@ -50,3 +50,16 @@ export async function patchVote(vote, article_id) {
     throw err;
   }
 }
+
+export async function addCommentHandler(article_id, newComment, username) {
+  const requestUrl = url + `/api/articles/${article_id}/comments`;
+  const body = { userName: username, body: newComment };
+
+  try {
+    const newCommentResponse = await axios.post(requestUrl, body);
+    return newCommentResponse;
+  } catch (err) {
+    console.error("error adding comment", err);
+    throw err;
+  }
+}
