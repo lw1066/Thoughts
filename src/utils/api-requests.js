@@ -63,3 +63,15 @@ export async function addCommentHandler(article_id, newComment, username) {
     throw err;
   }
 }
+
+export async function deleteComment(comment_id) {
+  const requestUrl = url + `/api/comments/${comment_id}`;
+
+  try {
+    await axios.delete(requestUrl);
+    return `comment id: ${comment_id} deleted`;
+  } catch (err) {
+    console.error("error deleting comment", err);
+    throw err;
+  }
+}

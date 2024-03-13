@@ -183,7 +183,7 @@ button:hover {
   font-size: 4vw;
 }
 
-#comment {
+.comment {
   margin: 0.5rem;
   padding: 0.5rem;
   background-color: black;
@@ -191,7 +191,7 @@ button:hover {
   max-width: 550px;
 }
 
-#comment p {
+.comment p {
   padding: 0.5rem 0;
 }
 
@@ -213,6 +213,61 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#commentHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#delete {
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: red;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#delete:hover {
+  cursor: pointer;
+  color: rgb(224, 25, 25);
+}
+
+.deleteCheck {
+  background-color: black;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #313131;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.close {
+  font-size: 10px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 764px) {
