@@ -2,8 +2,9 @@ import axios from "axios";
 
 const url = "https://news-api-demo.onrender.com";
 
-export async function articlesLoader() {
-  const requestUrl = url + "/api/articles";
+export async function articlesLoader({ request }) {
+  const topicSearch = new URL(request.url).search;
+  const requestUrl = url + "/api/articles" + topicSearch;
 
   try {
     const articles = await axios.get(requestUrl);
@@ -22,6 +23,18 @@ export async function articleLoader({ params }) {
     return article.data;
   } catch (err) {
     console.error("error loading articles", err);
+    throw err;
+  }
+}
+
+export async function topicsLoader() {
+  const requestUrl = url + "/api/topics";
+
+  try {
+    const topics = await axios.get(requestUrl);
+    return topics.data;
+  } catch (err) {
+    console.error("error loading topics", err);
     throw err;
   }
 }

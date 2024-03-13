@@ -7,11 +7,16 @@ import Root from "./routes/Root.jsx";
 import ErrorPage from "./routes/Error-page.jsx";
 import Articles from "./routes/Articles.jsx";
 import FullArticle from "./routes/FullArticle.jsx";
-import { articlesLoader, articleLoader } from "./utils/api-requests.js";
+import {
+  articlesLoader,
+  articleLoader,
+  topicsLoader,
+} from "./utils/api-requests.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    loader: topicsLoader,
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [

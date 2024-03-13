@@ -21,7 +21,8 @@ h1 {
 }
 
 #header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: space-evenly;
   max-width: 100%;
@@ -116,6 +117,10 @@ a:hover {
   padding: 0.25vw;
 }
 
+#filterNav a {
+  margin: 20px 10px;
+}
+
 .fullArticle {
   display: flex;
   flex-direction: column;
@@ -174,7 +179,24 @@ a:hover {
 }
 
 button:hover {
-  background-color: cornflowerblue;
+  background-color: rgb(87, 107, 144);
+}
+
+button {
+  background-color: transparent;
+}
+
+#filter {
+  grid-column: span 2;
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+#filterClose {
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 3px;
 }
 
 #commentsButton {
@@ -272,7 +294,7 @@ button:hover {
 
 @media screen and (min-width: 764px) {
   #comment p {
-    font-size: 2rvw;
+    font-size: 1vw;
   }
 
   #commentsButton {
@@ -292,6 +314,25 @@ button:hover {
   }
 
   #author {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (min-width: 964px) {
+  #appContainer {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .articleCard h2 {
+    font-size: 2vw;
+  }
+
+  .info {
+    font-size: 1.5vw;
+  }
+
+  .likeIt {
     font-size: 1.5vw;
   }
 }
