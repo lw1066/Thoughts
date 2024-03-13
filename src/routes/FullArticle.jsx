@@ -5,12 +5,14 @@ import { VoteButtons } from "../components/VoteButtons";
 import { Comments } from "../components/Comments";
 import { UserContext } from "../contexts/UserContext";
 import { AddComment } from "../components/AddComment";
+import ErrorModal from "../components/ErrorModal";
 
 export default function FullArticle() {
   const { user } = useContext(UserContext);
   const [comments, setComments] = useState(null);
   const [showComments, setShowComments] = useState(false);
   const [showAddCommentModal, setShowAddCommentModal] = useState(false);
+  const [error, setError] = useState(null);
   const { article_id } = useParams();
   const article = useLoaderData();
 
@@ -51,6 +53,14 @@ export default function FullArticle() {
     setShowAddCommentModal(!showAddCommentModal);
   };
 
+  const handleError = (errorMessage) => {
+    setError(errorMessage);
+  };
+
+  const clearError = () => {
+    setError(null);
+  };
+
   return (
     <div className="fullArticle">
       <div className="img">
@@ -82,7 +92,14 @@ export default function FullArticle() {
           {showAddCommentModal ? "cancel" : "Add comment"}
         </button>
       )}
-      {showComments && <Comments comments={comments} />}
+      {showComments && (
+        <Comments
+          comments={comments}
+          setComments={setComments}
+          handleError={handleError}
+        />
+      )}
+      {error && <ErrorModal error={error} clearError={clearError} />}
     </div>
   );
 }

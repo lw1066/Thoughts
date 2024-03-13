@@ -1,16 +1,15 @@
-export function Comments({ comments }) {
+import { Comment } from "./Comment";
+
+export function Comments({ comments, setComments, handleError }) {
   return (
     <ul id="commentsGrid">
-      {comments.map((comment, index) => (
-        <li key={index} id="comment">
-          <p>{comment.body}</p>
-          <p>Comment by : {comment.author}</p>
-          <div id="commentActions">
-            <p id="votes">{comment.votes} Likes</p>
-            <button>+</button>
-            <button>-</button>
-          </div>
-        </li>
+      {comments.map((comment) => (
+        <Comment
+          comment={comment}
+          setComments={setComments}
+          handleError={handleError}
+          key={comment.comment_id}
+        />
       ))}
     </ul>
   );

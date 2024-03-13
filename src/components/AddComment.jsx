@@ -28,7 +28,7 @@ export function AddComment({
   }
 
   return (
-    <div className="modal">
+    <div>
       <form id="commentForm" onSubmit={newCommentHandler}>
         <label id="commentLabel">{`Commenting as ${username}`}</label>
         <textarea
