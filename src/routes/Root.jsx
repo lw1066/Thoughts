@@ -3,6 +3,7 @@ import { UserContext } from "../contexts/UserContext";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Filter } from "../components/Filter";
+import { ScrollToTop } from "../utils/ScrollToTop";
 
 export default function Root() {
   const { user, setUser } = useContext(UserContext);
@@ -10,6 +11,7 @@ export default function Root() {
     <>
       <Header user={user.name} />
       <div id="appContainer">
+        <ScrollToTop />
         {useLocation().pathname === "/" && (
           <>
             <p>Landing page will have most upvoted articles and then...</p>
