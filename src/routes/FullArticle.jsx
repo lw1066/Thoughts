@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useParams, useLoaderData } from "react-router-dom";
+import { Link, useParams, useLoaderData, useNavigate } from "react-router-dom";
 import { getComments } from "../utils/api-requests";
 import { VoteButtons } from "../components/VoteButtons";
 import { Comments } from "../components/Comments";
@@ -8,6 +8,7 @@ import { AddComment } from "../components/AddComment";
 import ErrorModal from "../components/ErrorModal";
 
 export default function FullArticle() {
+  const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [comments, setComments] = useState(null);
   const [showComments, setShowComments] = useState(false);
@@ -57,6 +58,10 @@ export default function FullArticle() {
     setError(errorMessage);
   };
 
+  const handleBackNav = () => {
+    navigate(-1);
+  };
+
   const clearError = () => {
     setError(null);
   };
@@ -71,9 +76,9 @@ export default function FullArticle() {
         Author: {author} - {date}
       </p>
       <p className="bodyText">{body}</p>
-      <Link to="/articles">
-        <button>Back to articles</button>
-      </Link>
+
+      <button onClick={handleBackNav}>Back to articles</button>
+
       <VoteButtons votes={votes} article_id={article_id} />
       <p>Comments: {comment_count}</p>
       <button id="commentsButton" onClick={() => commentHandler(article_id)}>
