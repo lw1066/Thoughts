@@ -3,8 +3,8 @@ import axios from "axios";
 const url = "https://news-api-demo.onrender.com";
 
 export async function articlesLoader({ request }) {
-  const topicSearch = new URL(request.url).search;
-  const requestUrl = url + "/api/articles" + topicSearch;
+  const searchParams = new URL(request.url).searchParams;
+  const requestUrl = url + "/api/articles?" + searchParams;
 
   try {
     const articles = await axios.get(requestUrl);
