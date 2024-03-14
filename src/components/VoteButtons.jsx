@@ -29,17 +29,19 @@ export function VoteButtons({ votes, article_id }) {
         console.error("vote failed: ", err);
       }
     } else {
-      setError("You have already voted!");
+      setError("You already voted!");
     }
   };
 
   return (
     <>
       <div className="likeIt">
-        <p className="votes">Upvotes: {votesCount}</p>
-        <button onClick={() => voteHandler(1, article_id)}>+</button>
-        <button onClick={() => voteHandler(-1, article_id)}>-</button>
-        <p className="errorMessage"> {error && error}</p>
+        <p className="votes">{error ? error : "Upvotes:"}</p>
+        <div id="votebuttons">
+          <button onClick={() => voteHandler(1, article_id)}>+</button>
+          <p>{votesCount}</p>
+          <button onClick={() => voteHandler(-1, article_id)}>-</button>
+        </div>
       </div>
     </>
   );

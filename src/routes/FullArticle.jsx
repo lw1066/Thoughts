@@ -90,6 +90,7 @@ export default function FullArticle() {
           article_id={article_id}
           username={user.username}
           setComments={setComments}
+          handleError={handleError}
         />
       )}
       {showComments && user && (

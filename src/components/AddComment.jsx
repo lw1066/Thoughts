@@ -6,6 +6,7 @@ export function AddComment({
   article_id,
   username,
   setComments,
+  handleError,
 }) {
   const [newComment, setNewComment] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -13,14 +14,27 @@ export function AddComment({
   async function newCommentHandler(e) {
     e.preventDefault();
     setIsLoading(true);
-
+    let rollBackComments = [];
+    setComments((curr) => {
+      rollBackComments = [...curr];
+      const updatedComments = [
+        {
+          body: newComment,
+          votes: 0,
+          author: username,
+          article_id: article_id,
+          created_at: new Date().toUTCString(),
+        },
+        ...curr,
+      ];
+      return updatedComments;
+    });
+    setNewComment("");
     try {
       await addCommentHandler(article_id, newComment, username);
-      const updatedComments = await getComments(article_id);
-      setComments(updatedComments);
-      setNewComment("");
     } catch (err) {
-      console.error("Error adding comment: ", err);
+      setComments(rollBackComments);
+      handleError("Could not add comment - try again later");
     } finally {
       setIsLoading(false);
       toggleAddCommentModal();

@@ -100,9 +100,22 @@ a:hover {
 
 .likeIt {
   grid-area: actions;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   font-size: 3.5vw;
+  padding: 1rem;
+}
+
+#votebuttons {
+  display: flex;
+  align-items: center;
+}
+
+#votebuttons p {
+  margin: 0.5rem;
+  font-size: 1rem;
 }
 
 .likeIt p {
@@ -115,13 +128,6 @@ a:hover {
   border-radius: 8px;
   margin: 0 0.75vw;
   padding: 0.25vw;
-}
-
-#filterModal {
-}
-
-#filterNav a {
-  margin: 20px 10px;
 }
 
 .fullArticle {
@@ -166,13 +172,13 @@ a:hover {
   display: flex;
 }
 
-#voting button {
+/* #voting button {
   width: 1.5rem;
   height: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .fullArticle button {
   border-radius: 5px;
@@ -219,11 +225,6 @@ select {
   padding: 0.2rem;
   border-radius: 6px;
 }
-/* #filterClose {
-  margin-top: 10px;
-  border-radius: 8px;
-  padding: 3px;
-} */
 
 #commentsButton {
   margin: 1rem;
@@ -243,9 +244,20 @@ select {
   padding: 0.5rem 0;
 }
 
+#commentDate {
+  margin: 0;
+  padding: 0;
+}
+
 #commentActions {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+}
+
+#commentActions button {
+  width: 5vw;
+  height: 5vw;
 }
 
 .errorMessage {
@@ -308,6 +320,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  top: 50%;
   background-color: #313131;
   padding: 10px;
   border-radius: 10px;
@@ -317,10 +330,29 @@ select {
   font-size: 10px;
   cursor: pointer;
 }
+#error-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  line-height: 2rem;
+}
 
+#error-page button {
+  margin: 3rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+#error-page img {
+  width: 250;
+  margin-bottom: 3rem;
+}
 @media screen and (min-width: 764px) {
   #comment p {
-    font-size: 1vw;
+    font-size: 0.5vw;
   }
 
   #commentsButton {
@@ -342,16 +374,14 @@ select {
   #author {
     font-size: 1.5vw;
   }
-}
 
-@media screen and (min-width: 964px) {
   #appContainer {
     width: 60%;
     margin: 0 auto;
   }
 
   .articleCard h2 {
-    font-size: 2vw;
+    font-size: 3vw;
   }
 
   .info {
@@ -360,5 +390,50 @@ select {
 
   .likeIt {
     font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  #commentsButton {
+    font-size: 3vw;
+  }
+
+  .fullArticle p {
+    font-size: 4vw;
+  }
+
+  .fullArticle button {
+    font-size: 3vw;
+  }
+
+  #appContainer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .articleCard h2 {
+    font-size: 4.75vw;
+  }
+
+  .articleCard p {
+    font-size: 3.5vw;
+  }
+
+  .info {
+    font-size: 1.5vw;
+  }
+
+  .likeIt {
+    font-size: 1.5vw;
+  }
+
+  #filterNav {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+  #commentActions button {
+    width: 7vw;
+    height: 7vw;
   }
 }

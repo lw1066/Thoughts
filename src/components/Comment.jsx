@@ -9,8 +9,8 @@ export function Comment({
 }) {
   const [showDelete, setShowDelete] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-
   const { user } = useContext(UserContext);
+  const options = { day: "numeric", month: "short", year: "numeric" };
 
   async function deleteHandler(comment_id) {
     setIsDeleting(true);
@@ -59,9 +59,12 @@ export function Comment({
 
         <p>{body}</p>
         <p>Comment by : {author}</p>
+        <p id="commentDate">
+          {new Date(created_at).toLocaleString("en-GB", options)}
+        </p>
         <div id="commentActions">
-          <p id="votes">{votes} Likes</p>
           <button>+</button>
+          <p id="votes">{votes} Likes</p>
           <button>-</button>
         </div>
       </li>
