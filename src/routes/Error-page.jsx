@@ -13,7 +13,7 @@ export default function ErrorPage() {
   return (
     <>
       <div id="error-page">
-        <img src="/src/assets/icons8-apologise-100.png" />
+        <img src="/icons8-apologise-100.png" />
         <div>
           <h1>
             Oh dear - how <span style={{ color: "red" }}>embarrassing</span>...

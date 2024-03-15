@@ -14,7 +14,7 @@ export function Welcome() {
         </h2>
         <img
           id="thinker"
-          src="src/assets/imgonline-com-ua-Negative-C5VEEkvTMOlSeMHD.png"
+          src="/imgonline-com-ua-Negative-C5VEEkvTMOlSeMHD.png"
           alt="The thinker on a phone"
         />
 
@@ -24,7 +24,7 @@ export function Welcome() {
         <Link to="/articles">
           <img
             id="enchilada"
-            src="src/assets/enchilada-modified.png"
+            src="/enchilada-modified.png"
             alt="A hand grasping a big enchilada"
           />
         </Link>
