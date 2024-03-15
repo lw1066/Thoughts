@@ -62,11 +62,12 @@ export function Comment({
         <p id="commentDate">
           {new Date(created_at).toLocaleString("en-GB", options)}
         </p>
-        <div id="commentActions">
+        {/* comment votes to be implemented 
+          <div id="commentActions">
           <button>+</button>
           <p id="votes">{votes} Likes</p>
           <button>-</button>
-        </div>
+        </div> */}
       </li>
     </>
   );

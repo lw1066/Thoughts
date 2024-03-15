@@ -189,7 +189,7 @@ a:hover {
 }
 
 .headerButton {
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 0.2rem;
   margin: 5px;
   border-radius: 8px;
 }
@@ -478,6 +478,10 @@ select {
   #commentActions button {
     width: 7vw;
     height: 7vw;
+  }
+
+  #mainTitle {
+    flex-direction: column;
   }
 }
 
