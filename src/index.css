@@ -153,7 +153,7 @@ a:hover {
 }
 
 .fullArticle p {
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 
 .img img {
@@ -235,7 +235,7 @@ select {
 #commentsButton {
   margin: 1rem;
   padding: 0.25rem;
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 .comment {
@@ -402,16 +402,16 @@ select {
     font-size: 2vw;
   }
 
-  /* .fullArticle p {
-    font-size: 2vw;
-  } */
-
   .fullArticle button {
     font-size: 2vw;
   }
 
   .fullArticle h1 {
     font-size: 4vw;
+  }
+
+  .fullArticle p {
+    font-size: 2vw;
   }
 
   #author {

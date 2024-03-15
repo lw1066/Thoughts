@@ -17,7 +17,7 @@ export default function Root() {
       <div id="appContainer">
         <ScrollToTop />
         {location.pathname === "/" && <Welcome />}
-        {state === "loading" ? <div class="loader"></div> : <Outlet />}
+        {state === "loading" ? <div className="loader"></div> : <Outlet />}
       </div>
     </>
   );
