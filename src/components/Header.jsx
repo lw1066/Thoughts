@@ -1,13 +1,18 @@
+import { Link } from "react-router-dom";
 import { Filter } from "./Filter";
+import { Signin } from "./Signin";
 
 export function Header({ user }) {
   return (
     <>
       <div id="header">
-        <h1>Thoughts...</h1>
+        <Link id="mainTitle">
+          <img src="/src/assets/icons8-thinking-bubble-100.png" />
+          <h1>Thoughts</h1>
+        </Link>
 
         <div id="signin">
-          {!user ? <button>sign-in</button> : <p id="userName">Hi {user}!</p>}
+          <Signin />
         </div>
         <Filter />
       </div>

@@ -42,7 +42,7 @@ export function Filter() {
 
   return (
     <>
-      <button id="filter" onClick={toggleShow}>
+      <button className="headerButton" onClick={toggleShow}>
         {topic ? `${topic} articles` : "All articles"}
       </button>
 

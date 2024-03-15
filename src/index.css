@@ -16,14 +16,23 @@
   text-align: center;
 }
 
-h1 {
-  text-align: center;
+#mainTitle {
+  display: flex;
+  font-size: 4vw;
+  grid-row: span 2;
+  padding-left: 20px;
+}
+
+#mainTitle img {
+  width: 12vw;
 }
 
 #header {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   align-items: center;
+  justify-items: center;
   justify-content: space-evenly;
   max-width: 100%;
   position: sticky;
@@ -104,7 +113,7 @@ a:hover {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  font-size: 3.5vw;
+  font-size: 2vw;
   padding: 1rem;
 }
 
@@ -144,7 +153,7 @@ a:hover {
 }
 
 .fullArticle p {
-  font-size: 4vw;
+  font-size: 2vw;
 }
 
 .img img {
@@ -172,19 +181,17 @@ a:hover {
   display: flex;
 }
 
-/* #voting button {
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .fullArticle button {
   border-radius: 5px;
   padding: 0.25rem;
   margin: 0.5rem;
-  font-size: 4vw;
+  font-size: 3vw;
+}
+
+.headerButton {
+  padding: 0.1rem 1rem;
+  margin: 5px;
+  border-radius: 8px;
 }
 
 button:hover {
@@ -196,7 +203,6 @@ button {
 }
 
 #filter {
-  grid-column: span 2;
   width: 40%;
   margin: 10px auto;
   border-radius: 8px;
@@ -330,6 +336,43 @@ select {
   font-size: 10px;
   cursor: pointer;
 }
+
+#welcome {
+  width: 70%;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#welcome a {
+  display: flex;
+  align-items: center;
+}
+
+#welcome p {
+  margin: 0.5rem;
+  text-align: center;
+}
+
+#welcomeMessage {
+  text-align: center;
+}
+
+.bigWelcome {
+  font-size: 2rem;
+}
+
+#enchilada {
+  width: 30%;
+  margin: 0 auto;
+}
+
+#enchilada:hover {
+  transform: scale(1.1);
+  transition: ease;
+}
+
 #error-page {
   display: flex;
   flex-direction: column;
@@ -359,9 +402,9 @@ select {
     font-size: 2vw;
   }
 
-  .fullArticle p {
+  /* .fullArticle p {
     font-size: 2vw;
-  }
+  } */
 
   .fullArticle button {
     font-size: 2vw;
@@ -388,9 +431,9 @@ select {
     font-size: 1.5vw;
   }
 
-  .likeIt {
+  /* .likeIt {
     font-size: 1.5vw;
-  }
+  } */
 }
 
 @media screen and (max-width: 468px) {
@@ -435,5 +478,51 @@ select {
   #commentActions button {
     width: 7vw;
     height: 7vw;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 40px;
+  outline: 2px solid #fff;
+  background: radial-gradient(farthest-side, red 90%, #0000) 0 0/8px 8px
+      no-repeat,
+    radial-gradient(farthest-side, #000 90%, #0000) 0 0/8px 8px no-repeat,
+    linear-gradient(#fff 0 0) 50%/10px 100% no-repeat,
+    conic-gradient(from 90deg at 10px 10px, #0000 90deg, #fff 0),
+    conic-gradient(from -90deg at 60px 30px, #0000 90deg, #fff 0);
+  animation: l9 2s infinite;
+}
+@keyframes l9 {
+  0% {
+    background-position: 50% 100%, 0 0, 50%;
+  }
+  12.5% {
+    background-position: 0 100%, 50% 0, 50%;
+  }
+  25% {
+    background-position: 0 0, 50% 100%, 50%;
+  }
+  37.5% {
+    background-position: 50% 0, 100% 100%, 50%;
+  }
+  50% {
+    background-position: 50% 100%, 100% 0, 50%;
+  }
+  62.5% {
+    background-position: 100% 100%, 50% 0, 50%;
+  }
+  75% {
+    background-position: 100% 0, 50% 100%, 50%;
+  }
+  82.5% {
+    background-position: 50% 0, 0 100%, 50%;
+  }
+  100% {
+    background-position: 50% 100%, 0 0, 50%;
   }
 }

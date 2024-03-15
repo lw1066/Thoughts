@@ -88,3 +88,15 @@ export async function deleteComment(comment_id) {
     throw err;
   }
 }
+
+export async function getUserByUsername(username) {
+  const requestUrl = url + `/api/users/${username}`;
+
+  try {
+    const user = await axios.get(requestUrl);
+    return user.data;
+  } catch (err) {
+    console.error("error can't find user", err);
+    throw err;
+  }
+}
