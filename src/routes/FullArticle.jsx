@@ -81,9 +81,11 @@ export default function FullArticle() {
 
       <VoteButtons votes={votes} article_id={article_id} />
       <p>Comments: {comment_count}</p>
+
       <button id="commentsButton" onClick={() => commentHandler(article_id)}>
         {showComments ? "Hide comments" : "Show Comments"}
       </button>
+
       {showAddCommentModal && (
         <AddComment
           toggleAddCommentModal={toggleAddCommentModal}
@@ -93,7 +95,7 @@ export default function FullArticle() {
           handleError={handleError}
         />
       )}
-      {showComments && user && (
+      {showComments && user.username && (
         <button id="commentsButton" onClick={toggleAddCommentModal}>
           {showAddCommentModal ? "cancel" : "Add comment"}
         </button>
