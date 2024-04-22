@@ -66,9 +66,9 @@ export function Filter() {
 
             <label htmlFor="sortBy">Sort</label>
             <select id="sortBy" value={sort.sortBy} onChange={handleChange}>
-              <option value="created_at">Date</option>
               <option value="comment_count">Comment Count</option>
               <option value="votes">Votes</option>
+              <option value="created_at">Date</option>
             </select>
 
             <fieldset>
