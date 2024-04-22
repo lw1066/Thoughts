@@ -5,12 +5,7 @@ export function Welcome() {
     <>
       <div id="welcome">
         <h2 id="welcomeMessage">
-          <span className="bigWelcome">Welcome </span>
-          <br />
-          to the <br />
-          <span className="bigWelcome">thoughts</span>
-          <br /> of <br />
-          <span className="bigWelcome">others </span>
+          <span className="bigWelcome">Welcome Thinker </span>
         </h2>
         <img
           id="thinker"
@@ -20,7 +15,7 @@ export function Welcome() {
 
         <p>People have thoughts on many things.</p>
         <p>Choose a topic to explore in the top right.</p>
-        <p>Or just take a look at the whole enchilaada!</p>
+        <p>Or just take a look at the whole enchilada!</p>
         <Link to="/articles">
           <img
             id="enchilada"
@@ -28,8 +23,9 @@ export function Welcome() {
             alt="A hand grasping a big enchilada"
           />
         </Link>
-        <p>If you'd like to add your thoughts about other's thought.</p>
-        <p> Sign in/up to add comments!</p>
+        <p>
+          If you'd like to add your thought about other's thoughts, sign in/up.
+        </p>
       </div>
     </>
   );

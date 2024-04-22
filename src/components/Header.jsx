@@ -8,7 +8,7 @@ export function Header({ user }) {
       <div id="header">
         <Link id="mainTitle">
           <img src="/icons8-thinking-bubble-100.png" />
-          <h1>Thoughts</h1>
+          <h1>the Thoughts of Others</h1>
         </Link>
 
         <div id="signin">
