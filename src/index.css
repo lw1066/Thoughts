@@ -17,9 +17,9 @@
 
 #mainTitle {
   display: flex;
-  font-size: 2.5vw;
+  font-size: 2.75vw;
   grid-row: span 2;
-  padding-left: 20px;
+  padding-left: 40px;
   width: 100%;
   align-items: center;
 }
@@ -145,6 +145,7 @@ a:hover {
 .votes {
   font-size: 10px;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .likeIt button {
@@ -594,8 +595,19 @@ select {
     flex-direction: column;
   }
 
-  #mainTitle {
-    flex-direction: column;
+  #header {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #signin {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .titles h2 {
+    font-size: 4vw;
   }
 }
 
