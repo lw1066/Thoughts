@@ -5,7 +5,7 @@ export default function Articles() {
   const articles = useLoaderData();
 
   return (
-    <ul>
+    <ul id="articlesList">
       {articles.map((article) => {
         return <Article key={article.article_id} {...article} />;
       })}

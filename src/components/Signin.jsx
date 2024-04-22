@@ -39,9 +39,12 @@ export function Signin() {
   return (
     <>
       {user.username !== null ? (
-        <button className="headerButton" onClick={signout}>
-          Hi {user.name}! (signout)
-        </button>
+        <>
+          <p className="headerText">Hi {user.name}!</p>
+          <button className="headerButton" onClick={signout}>
+            Signout
+          </button>
+        </>
       ) : (
         <button className="headerButton" onClick={toggleShow}>
           sign-in

@@ -36,7 +36,7 @@ export function VoteButtons({ votes, article_id }) {
   return (
     <>
       <div className="likeIt">
-        <p className="votes">{error ? error : "Upvotes:"}</p>
+        <p className="votes">{error ? error : "Upvotes"}</p>
         <div id="votebuttons">
           <button onClick={() => voteHandler(1, article_id)}>+</button>
           <p>{votesCount}</p>

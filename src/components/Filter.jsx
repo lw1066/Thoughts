@@ -42,6 +42,7 @@ export function Filter() {
 
   return (
     <>
+      <p className="headerText">Filter Articles</p>
       <button className="headerButton" onClick={toggleShow}>
         {topic ? `${topic} articles` : "All articles"}
       </button>

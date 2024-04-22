@@ -68,45 +68,47 @@ export default function FullArticle() {
 
   return (
     <div className="fullArticle">
-      <div className="img">
+      <div className="title">
+        <h1>{title}</h1>
+        <p id="author">
+          By {author} on {date}
+        </p>
+      </div>
+      <div className="image">
         <img src={article_img_url} alt={title} />
       </div>
-      <h1>{title}</h1>
-      <p id="author">
-        Author: {author} - {date}
-      </p>
+
       <p className="bodyText">{body}</p>
-
-      <button onClick={handleBackNav}>Back to articles</button>
-
-      <VoteButtons votes={votes} article_id={article_id} />
-      <p>Comments: {comment_count}</p>
-
-      <button id="commentsButton" onClick={() => commentHandler(article_id)}>
-        {showComments ? "Hide comments" : "Show Comments"}
-      </button>
-
-      {showAddCommentModal && (
-        <AddComment
-          toggleAddCommentModal={toggleAddCommentModal}
-          article_id={article_id}
-          username={user.username}
-          setComments={setComments}
-          handleError={handleError}
-        />
-      )}
-      {showComments && user.username && (
-        <button id="commentsButton" onClick={toggleAddCommentModal}>
-          {showAddCommentModal ? "cancel" : "Add comment"}
+      <div className="info">
+        <VoteButtons votes={votes} article_id={article_id} />
+        <button onClick={handleBackNav}>Back to articles</button>
+        <button id="commentsButton" onClick={() => commentHandler(article_id)}>
+          {showComments ? "Hide comments" : `Show ${comment_count} Comments`}
         </button>
-      )}
-      {showComments && (
-        <Comments
-          comments={comments}
-          setComments={setComments}
-          handleError={handleError}
-        />
-      )}
+      </div>
+      <div className="comments">
+        {showAddCommentModal && (
+          <AddComment
+            toggleAddCommentModal={toggleAddCommentModal}
+            article_id={article_id}
+            username={user.username}
+            setComments={setComments}
+            handleError={handleError}
+          />
+        )}
+        {showComments && user.username && !showAddCommentModal && (
+          <button id="commentsButton" onClick={toggleAddCommentModal}>
+            Add comment
+          </button>
+        )}
+        {showComments && (
+          <Comments
+            comments={comments}
+            setComments={setComments}
+            handleError={handleError}
+          />
+        )}
+      </div>
       {error && <ErrorModal error={error} clearError={clearError} />}
     </div>
   );

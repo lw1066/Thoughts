@@ -35,7 +35,7 @@ export function Comment({
       {showDelete && (
         <div className="deleteCheck">
           <p>Are you sure you want to delete your comment below?</p>
-          <div>
+          <div className="deleteButtons">
             <button
               onClick={() => deleteHandler(comment_id)}
               disabled={isDeleting}

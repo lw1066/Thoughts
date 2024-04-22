@@ -54,9 +54,12 @@ export function AddComment({
           style={{ fontSize: "14px" }}
           required
         />
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "SUBMITTING" : "Submit"}
-        </button>
+        <div className="addCommentButtons">
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "SUBMITTING" : "Submit"}
+          </button>
+          <button onClick={toggleAddCommentModal}>Cancel</button>
+        </div>
       </form>
     </div>
   );

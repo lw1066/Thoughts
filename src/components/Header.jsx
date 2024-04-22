@@ -13,8 +13,8 @@ export function Header({ user }) {
 
         <div id="signin">
           <Signin />
+          <Filter />
         </div>
-        <Filter />
       </div>
     </>
   );

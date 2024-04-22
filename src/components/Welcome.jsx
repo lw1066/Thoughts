@@ -18,7 +18,7 @@ export function Welcome() {
           alt="The thinker on a phone"
         />
 
-        <p>People have thought on many things.</p>
+        <p>People have thoughts on many things.</p>
         <p>Choose a topic to explore in the top right.</p>
         <p>Or just take a look at the whole enchilaada!</p>
         <Link to="/articles">
