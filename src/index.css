@@ -222,12 +222,14 @@ a:hover {
 .headerButton {
   padding: 0.1rem 0.2rem;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 5px;
+  color: white;
 }
 
 .headerText {
   font-size: 0.75rem;
   text-align: center;
+  color: white;
 }
 
 button:hover {
@@ -236,6 +238,7 @@ button:hover {
 
 button {
   background-color: transparent;
+  color: white;
 }
 
 #filter {
